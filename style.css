@@ -14,6 +14,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
   }
+
+  #about-section {
+    background: url('back.jpg') no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+  }
   
   .dark-overlay {
     background-color: rgba(0, 0, 0, .7);
@@ -45,4 +52,16 @@ body {
   .con {
       font-weight: 700;
       color: #c0392b;
+  }
+
+  .btn-block:hover, .btn-block:active{
+    background-color: #c0392b;
+  }
+
+  .message {
+    text-decoration: none;
+  }
+
+  .signup-form {
+    display: none;
   }
