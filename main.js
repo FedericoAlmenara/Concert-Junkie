@@ -7,25 +7,6 @@
         $("#second-form").hide();
     });
 
-    
-    $("#search-button").on("click", function () {
-    
-    event.preventDefault();
-
-    var result = $("#search-button").val().trim().toUpperCase();
-
-    var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="
-    + result + "&api_key=91228e136aa2fa9726fb4de5c9da5b81&format=json"
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-
-    }).then(function(response) {
-        console.log(response);
-    });
-});
-
     function searchBandsInTown(artist) {
 
     // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
@@ -61,4 +42,17 @@
 
     // Running the searchBandsInTown function(passing in the artist as an argument)
     searchBandsInTown(inputArtist);
+
   });
+
+  $.ajax({
+    type : 'POST',
+    url : '"https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=",
+    data : 'method=artist.getinfo&' +
+           'artist=After+The+Burial&' +
+           'api_key=57ee3318536b23ee81d6b27e36997cde&' +
+           'format=json',
+    dataType : 'jsonp',
+    success : function(data) {
+        // Handle success code here
+    },
