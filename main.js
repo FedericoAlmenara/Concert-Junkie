@@ -51,8 +51,6 @@ function searchTopTracks(artist) {
         for (let i = 0; i < toptracks.length; i++) {
              trackName = toptracks[i].name; 
              $("#top-tracks").append(`<li>${trackName}</li>`)
-             
-
          }
 
         // //console.log(response.artist.bio.summary);
