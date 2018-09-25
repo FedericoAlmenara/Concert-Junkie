@@ -1,13 +1,32 @@
 body {
+<<<<<<< HEAD
   background-color: #333;
   color: #fff;
 }
+=======
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .navbar {
+    border-bottom: #dc3545 3px solid;
+    opacity: .7;
+  }
+  
+  #home-section {
+    background: url('back.jpg') no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+>>>>>>> origin
 
 .navbar {
   border-bottom: #dc3545 3px solid;
   opacity: .7;
 }
 
+<<<<<<< HEAD
 #home-section {
   background: url('back.jpg') no-repeat;
   min-height: 100vh;
@@ -42,6 +61,24 @@ body {
   padding-top: 200px;
 }
 @media (max-width: 992px) {
+=======
+  #artist-section {
+    background: url('back.jpg') no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .dark-overlay {
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+>>>>>>> origin
   .home-inner {
     padding-top: 150px;
   }
@@ -56,6 +93,7 @@ body {
     font-size: 25px;
 }
 
+<<<<<<< HEAD
 .fas:hover {
   color: #dc3545;
 }
@@ -63,6 +101,36 @@ body {
 #webTitle:hover {
   color: #dc3545;
 }
+=======
+  .fas:hover {
+    color: #dc3545;
+  }
+
+  #webTitle:hover {
+    color: #dc3545;
+  }
+
+  #homePage:hover {
+    color: #dc3545;
+  }
+
+  #aboutPage:hover {
+    color: #dc3545;
+  }
+
+  #artistPage:hover {
+    color: #dc3545;
+  }
+
+ .con {
+      font-weight: 700;
+      color: #dc3545;
+  }
+
+  .btn-block:hover, .btn-block:active{
+    background-color: #dc3545;
+  }
+>>>>>>> origin
 
 #homePage:hover {
   color: #dc3545;
@@ -72,6 +140,7 @@ body {
   color: #dc3545;
 }
 
+<<<<<<< HEAD
 #artistPage:hover {
   color: #dc3545;
 }
@@ -131,4 +200,44 @@ color: #333;
 
 .fab:hover {
 color: #fff;
+=======
+  #artist-div h1{
+    color: #dc3545;
+  }
+
+  #artist-div a{
+    color: #dc3545;
+    font-size: x-large;
+}
+
+footer {
+  background-color: #333;
+}
+
+#search-stretch {
+  width: 1100px;
+  vertical-align: middle;
+}
+
+#search-box {
+   margin-bottom: 10px;
+   padding-bottom: 1px;
+}
+
+#search-padding {
+  padding-top: 60px;
+  padding-bottom: 150px;
+}
+
+#font-color {
+  color: #333;
+}
+
+.fab {
+  color: #333;
+}
+
+.fab:hover {
+  color: #fff;
+>>>>>>> origin
 }
