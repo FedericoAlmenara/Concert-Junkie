@@ -62,3 +62,62 @@
     // Running the searchBandsInTown function(passing in the artist as an argument)
     searchBandsInTown(inputArtist);
   });
+
+
+  
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBiXm6n6bISFIAXvqNNbekO6b7kh-y-DJY",
+    authDomain: "project-1-385c6.firebaseapp.com",
+    databaseURL: "https://project-1-385c6.firebaseio.com",
+    projectId: "project-1-385c6",
+    storageBucket: "project-1-385c6.appspot.com",
+    messagingSenderId: "981858209617"
+  };
+  
+  firebase.initializeApp(config);
+
+  var dataRef = firebase.database();
+
+  //Values
+  var artist = "";
+  var str = artist;
+
+  //capture click
+  $("#search-button").on("click", function(event){
+      event.preventDefault();
+    
+    //   function (item_value) {
+    //     while ( list.children.length >= 5 )
+    //     {
+    //       list.removeChild(list.firstChild );
+      
+      artist= $("#search-box").val().trim();
+
+      //push code
+      dataRef.ref().push({
+          artist: artist,
+          dateAdded: firebase.database.ServerValue.TIMESTAMP
+        
+      });
+  });
+
+  
+  dataRef.ref().on("child_added", function(childSnapshot) {
+//snapshot log
+    console.log(childSnapshot.val().artist);
+
+
+$("#recentSearch").append("<div class='well'><span class= 'artist-name'>" +
+childSnapshot.val().artist
+);
+
+}, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  
+$("#artist-display").text(snapshot.val().artist);
+
+
+  });
