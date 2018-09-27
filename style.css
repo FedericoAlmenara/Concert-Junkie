@@ -163,3 +163,6 @@ a {
 #top-tracks-header{
   color: #dc3545;
 }
+#recentSearch{
+  display: block;
+}

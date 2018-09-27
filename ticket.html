@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>ConcertJunkie</title>
@@ -8,7 +9,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 </head>
+
 <body>
   <!-- navbar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
@@ -37,78 +40,82 @@
   </nav>
   <header id="artist-section">
     <div class="dark-overlay">
-        <div class="home-inner" id="search-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 d-none d-sm-block">
-                        <h1 class="display-4"><strong class="text-muted con"></strong></h1>
-                        <form id="search-stretch" class="form-inline my-2 my-lg-0 ml-auto mr-auto jumbotron" style="background-color: #333">
-                            <input class="form-inline mr-sm-2 col-lg-12" id="search-box" type="search" placeholder="blink-182" aria-label="Search">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 col-lg-12" id="search-button" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="home-inner" id="search-padding">
         <div class="container">
           <div class="row">
-        <div class="col-md-8 text-center" id="artist-div">
-            <div class="jumbotron" id="jumbotron2" hidden>
-                <div id="bands-view" hidden></div>
-                <div id="band-info-div"></div>
+            <div class="col-lg-8 d-none d-sm-block">
+              <h1 class="display-4">
+                <strong class="text-muted con"></strong>
+              </h1>
+              <form id="search-stretch" class="form-inline my-2 my-lg-0 ml-auto mr-auto jumbotron" style="background-color: #333">
+                <input class="form-inline mr-sm-2 col-lg-12" id="search-box" type="search" placeholder="blink-182" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-sm-0 col-lg-12" id="search-button" type="submit">Search</button>
+              </form>
             </div>
-        </div>
-        <div class="col-md-4 Olist">
-            <h3 id="top-tracks-header"></h3>
-          <ul id="top-tracks">
-            <li hidden>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 text-center" id="artist-div">
+            <div class="jumbotron" id="jumbotron2" hidden>
+              <div id="bands-view" hidden></div>
+              <div id="band-info-div"></div>
+            </div>
+          </div>
+          <div class="col-md-4 Olist">
+            <h3 id="top-tracks-header"></h3>
+            <ul id="top-tracks">
+              <li hidden>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!--Youtube Video Player-->
- <div class = "container">
-    <div class= "text-center" id="jumboPlayer">
-        <div id = "ytplayer"></div>
-    </div>
-  </div>
-        
-        <section class="info-head-section bg-danger" id="font-color">
-                <div class="container">
-                  <div class="row">
-                    <div class="col text-center">
-                      <div class="p-5">
-                        <h2 class="display-4">Connect with Us</h1>
-                        <a href="https://www.facebook.com/Concert-Junkie-739365489730130/?modal=admin_todo_tour"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com"><i class="fab fa-staylinked"></i></a>
-                        <a href="https://www.spotify.com"><i class="fab fa-spotify"></i></a>
-                      </div>
+      <div class="container">
+        <div class="text-center" id="jumboPlayer">
+          <div id="ytplayer"></div>
+        </div>
+      </div>
+
+      <section class="info-head-section bg-danger" id="font-color">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <div class="p-5">
+                <!--Recently Searched list-->
+                <div class="panel panel-primary panel-transparent">
+                  <div class="container" style="width: 18rem; color: rgb(226, 226, 226)">
+                    <div id="recentSearch">
+                      <strong>Recently Searched:</strong>
                     </div>
                   </div>
                 </div>
-              </section>
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 p-5">
-          <!--Footer Bottom-->
-          <p class="text-center">&copy; Copyright 2018. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="main.js"></script>
-  </body>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 p-5">
+              <!--Footer Bottom-->
+              <p class="text-center">&copy; Copyright 2018. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+      <script src="main.js"></script>
+</body>
 
 </html>
-
