@@ -93,3 +93,51 @@ function searchBandsInTown(artist) {
         $("#ytplayer").append('<iframe width="960" height="585" src="https://www.youtube.com/embed/' + playerId + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> ');
     });
  });
+
+ //Initialize Firebase
+ var config = {
+   apiKey: "AIzaSyBiXm6n6bISFIAXvqNNbekO6b7kh-y-DJY",
+   authDomain: "project-1-385c6.firebaseapp.com",
+   databaseURL: "https://project-1-385c6.firebaseio.com",
+   projectId: "project-1-385c6",
+   storageBucket: "project-1-385c6.appspot.com",
+   messagingSenderId: "981858209617"
+ };
+
+ firebase.initializeApp(config);
+
+ var dataRef = firebase.database();
+
+ //Values
+ var artist = "";
+ var str = artist;
+
+ //capture click
+ $("#search-button").on("click", function(event){
+     event.preventDefault();
+
+     artist= $("#search-box").val().trim();
+
+     //push code
+     dataRef.ref().push({
+         artist: artist,
+         dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+     });
+ });
+
+
+ dataRef.ref().limitToLast(9).on("child_added", function(childSnapshot) {
+//snapshot log
+   console.log(childSnapshot.val().artist);
+
+
+$("#recentSearch").append("<div class='well'><span class= 'artist-name'>" +
+childSnapshot.val().artist
+);
+
+}, function(errorObject) {
+   console.log("Errors handled: " + errorObject.code);
+
+$("#artist-display").text(snapshot.val().artist);
+});
